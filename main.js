@@ -72,7 +72,7 @@ const postsList = document.querySelector(".posts-list")
             <div class="post__header">
                 <div class="post-meta">
                     <div class="post-meta__icon">
-                        <img class="profile-pic" src="${posts.author.image}" alt="${posts.author.name}">
+                        <img class="profile-pic" src=${posts.author.image}">
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${posts.author.name}</div>
@@ -99,28 +99,54 @@ const postsList = document.querySelector(".posts-list")
             </div>
         </div>`))
         
-       
+    //    if ( posts.author.image === null){
+    //     const nomeSplit = posts.author.name.split(" ");
+    //     console.log(nomeSplit);
+    //     const nome = nomeSplit[0].split("");
+    //     const cognome = nomeSplit[1].split("");
+    //     // si un metodo molto orribile, so che se ci fossero 3 nomi non funzionerebbe 
+    //     const iniziali = nome[0] + cognome[0];
+    //     console.log(iniziali);
+
+    //     // prendo div padre 
+    //     const postMetaIconContainer = document.querySelector(".post-meta__icon");
+    //     let nomeAlt = document.createElement("div");
+    //     nomeAlt = iniziali;
+    //     postMetaIconContainer.append(nomeAlt);   
+
+        
+    //    };
 
         
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  posts.forEach((element, i) => {
  let jsLikeBtn = document.querySelectorAll(".js-like-button");
 
  jsLikeBtn[i].addEventListener("click", function() {
      let btnLiked = jsLikeBtn[i].classList.toggle("like-button--liked");
-     let jsLikeCounter = document.querySelectorAll(".js-like-counter");
-     
-    console.log(jsLikeCounter);
+     let jsLikeCounter = document.querySelectorAll(".js-likes-counter");
+
      
 
      if (btnLiked === true) {
          jsLikeCounter[i].innerHTML = element.likes + 1;
-         btnLiked === false ;
 
      } else { 
          jsLikeCounter[i].innerHTML = element.likes;
-         btnLiked === true ; 
      }
  })
  })
